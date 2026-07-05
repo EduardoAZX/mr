@@ -57,11 +57,9 @@
   });
 
   /* Fade das imagens (galeria, fundos e logo) ao carregar; placeholder permanece se não existir */
-  document.querySelectorAll(".gallery-img, .bg-img, .logo__img").forEach(function (img) {
+  document.querySelectorAll(".gallery-img, .bg-img").forEach(function (img) {
     var markLoaded = function () {
       img.classList.add("is-loaded");
-      var footerLogo = img.closest(".footer-logo");
-      if (footerLogo) footerLogo.classList.add("has-img");
     };
     if (img.complete && img.naturalWidth > 0) {
       markLoaded();

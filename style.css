@@ -154,9 +154,6 @@ p { margin: 0 0 1rem; color: var(--text-muted); text-wrap: pretty; }
 
 .site-header.is-scrolled {
   border-color: var(--border);
-  background: rgba(247, 247, 247, 0.7);
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
 }
 
 .site-header__inner {
@@ -169,21 +166,21 @@ p { margin: 0 0 1rem; color: var(--text-muted); text-wrap: pretty; }
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: .55rem;
-  font-family: var(--font-title);
-  font-weight: 900;
-  font-size: 1.05rem;
-  letter-spacing: -0.02em;
+  gap: .6rem;
   color: var(--green-dark);
 }
 
-.logo__img {
-  height: 28px;
+.logo__icon {
+  height: 34px;
   width: auto;
-  display: none;
+  display: block;
 }
 
-.logo__img.is-loaded { display: block; }
+.logo__wordmark {
+  height: 21px;
+  width: auto;
+  display: block;
+}
 
 .nav__list {
   display: flex;
@@ -371,6 +368,9 @@ p { margin: 0 0 1rem; color: var(--text-muted); text-wrap: pretty; }
 
 .section--bg:not(.hero):not(#onde-atuamos) {
   border-radius: clamp(20px, 3vw, 36px) clamp(20px, 3vw, 36px) 0 0;
+  margin-top: clamp(-36px, -3vw, -20px);
+  position: relative;
+  z-index: 2;
 }
 
 /* Contato e footer: largura total, cantos arredondados só em cima, colados um no outro */
@@ -948,28 +948,12 @@ p { margin: 0 0 1rem; color: var(--text-muted); text-wrap: pretty; }
 .footer-logo {
   display: flex;
   align-items: center;
-  gap: .55rem;
+  gap: .6rem;
   margin-bottom: .3rem;
 }
 
-.logo__img--footer { height: 28px; }
-
-.footer-logo.has-img .footer-logo__mark { display: none; }
-
-.footer-logo__mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 7px;
-  background: var(--green-light);
-  color: #000;
-  font-family: var(--font-title);
-  font-weight: 900;
-  font-size: .7rem;
-  letter-spacing: -0.02em;
-}
+.footer-logo .logo__icon { height: 64px; }
+.footer-logo .logo__wordmark--footer { height: 42px; }
 
 .footer-inner {
   display: grid;
